@@ -63,7 +63,7 @@ public class TemperatureSeriesAnalysis {
         }
         double maxTemp = tempArr[0];
         for (double temperature : tempArr) {
-            maxTemp = Math.min(maxTemp, temperature);
+            maxTemp = Math.max(maxTemp, temperature);
         }
         return maxTemp;
     }
