@@ -1,11 +1,11 @@
 package ua.edu.ucu.tempseries;
-import java.lang.Math;
+
 import java.util.InputMismatchException;
 
 public class TemperatureSeriesAnalysis {
     private double[] tempArr;
     private int tempArrSize;
-    static final int ABSOLUTE_ZERO = -273;
+    final static int ABSOLUTE_ZERO = -273;
 
     public TemperatureSeriesAnalysis() {
         tempArr = new double[]{};
@@ -40,7 +40,7 @@ public class TemperatureSeriesAnalysis {
         double mean = average();
         double deavSum = 0;
         for (double temperature : tempArr) {
-            deavSum += Math.pow(temperature - mean, 2) ;
+            deavSum += Math.pow(temperature - mean, 2);
         }
         return Math.pow(deavSum / tempArrSize, 0.5);
     }
@@ -154,7 +154,6 @@ public class TemperatureSeriesAnalysis {
                 double[] newTempArr = new double[tempArrSize*2];
                 System.arraycopy(tempArr,0 , newTempArr, 0, tempArrSize);
                 tempArr = newTempArr;
-
             }
             tempArr[tempArrSize++] = temp;
         }
