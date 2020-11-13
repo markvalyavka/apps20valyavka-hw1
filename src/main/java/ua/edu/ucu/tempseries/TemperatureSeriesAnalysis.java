@@ -3,9 +3,10 @@ package ua.edu.ucu.tempseries;
 import java.util.InputMismatchException;
 
 public class TemperatureSeriesAnalysis {
+    static final int ABSOLUTE_ZERO = -273;
     private double[] tempArr;
     private int tempArrSize;
-    final static int ABSOLUTE_ZERO = -273;
+
 
     public TemperatureSeriesAnalysis() {
         tempArr = new double[]{};
@@ -40,7 +41,7 @@ public class TemperatureSeriesAnalysis {
         double mean = average();
         double deavSum = 0;
         for (double temperature : tempArr) {
-            deavSum += Math.pow(temperature - mean, 2);
+            deavSum += (temperature - mean)*(temperature - mean);
         }
         return Math.pow(deavSum / tempArrSize, 0.5);
     }
@@ -152,7 +153,7 @@ public class TemperatureSeriesAnalysis {
                 throw new InputMismatchException();
             } else if (tempArrSize == tempArr.length) {
                 double[] newTempArr = new double[tempArrSize*2];
-                System.arraycopy(tempArr,0 , newTempArr, 0, tempArrSize);
+                System.arraycopy(tempArr, 0 , newTempArr, 0, tempArrSize);
                 tempArr = newTempArr;
             }
             tempArr[tempArrSize++] = temp;

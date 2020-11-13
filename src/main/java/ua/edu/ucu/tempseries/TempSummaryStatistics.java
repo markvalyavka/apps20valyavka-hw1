@@ -7,7 +7,8 @@ public class TempSummaryStatistics {
     private final double maxTemperature;
 
 
-    public TempSummaryStatistics(double avgTemperature, double devTemperature, double minTemperature, double maxTemperature) {
+    public TempSummaryStatistics(double avgTemperature, double devTemperature,
+                                 double minTemperature, double maxTemperature) {
         this.avgTemperature = avgTemperature;
         this.devTemperature = devTemperature;
         this.minTemperature = minTemperature;
