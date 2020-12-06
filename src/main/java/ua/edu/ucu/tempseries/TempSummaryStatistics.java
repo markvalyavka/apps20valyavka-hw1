@@ -15,11 +15,19 @@ public class TempSummaryStatistics {
         this.maxTemperature = maxTemperature;
     }
 
-    public double getAvgTemperature() { return avgTemperature; }
+    public double getAvgTemperature() {
+        return avgTemperature;
+    }
 
-    public double getDevTemperature() { return devTemperature; }
+    public double getDevTemperature() {
+        return devTemperature;
+    }
 
-    public double getMinTemperature() { return minTemperature; }
+    public double getMinTemperature() {
+        return minTemperature;
+    }
 
-    public double getMaxTemperature() { return maxTemperature; }
+    public double getMaxTemperature() {
+        return maxTemperature;
+    }
 }

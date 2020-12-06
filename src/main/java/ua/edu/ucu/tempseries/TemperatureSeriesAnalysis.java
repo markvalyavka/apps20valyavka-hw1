@@ -7,12 +7,6 @@ public class TemperatureSeriesAnalysis {
     private double[] tempArr;
     private int tempArrSize;
 
-
-    public TemperatureSeriesAnalysis() {
-        tempArr = new double[]{};
-        tempArrSize = 0;
-    }
-
     public TemperatureSeriesAnalysis(double[] temperatureSeries) {
         for (double temperature : temperatureSeries) {
             if (temperature < ABSOLUTE_ZERO) {
@@ -41,7 +35,7 @@ public class TemperatureSeriesAnalysis {
         double mean = average();
         double deavSum = 0;
         for (double temperature : tempArr) {
-            deavSum += (temperature - mean)*(temperature - mean);
+            deavSum += (temperature - mean) * (temperature - mean);
         }
         return Math.pow(deavSum / tempArrSize, 0.5);
     }
@@ -152,8 +146,8 @@ public class TemperatureSeriesAnalysis {
             if (temp < ABSOLUTE_ZERO) {
                 throw new InputMismatchException();
             } else if (tempArrSize == tempArr.length) {
-                double[] newTempArr = new double[tempArrSize*2];
-                System.arraycopy(tempArr, 0 , newTempArr, 0, tempArrSize);
+                double[] newTempArr = new double[tempArrSize * 2];
+                System.arraycopy(tempArr, 0, newTempArr, 0, tempArrSize);
                 tempArr = newTempArr;
             }
             tempArr[tempArrSize++] = temp;
